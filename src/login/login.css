@@ -1,0 +1,41 @@
+h1 {
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-box {
+    border-bottom: 30px solid #04aeee;
+    border-top: 30px solid #04aeee;
+    border-left: 5px solid #04aeee;
+    border-right: 5px solid #04aeee;
+    border-radius: 5px;
+    padding: 20px;
+    width: fit-content;
+    margin: auto;
+}
+
+.form-input {
+    text-align: right;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 5px;
+}
+
+.login-button {
+    text-align: center;
+}
+
+#login-button {
+    border: 1px solid rgb(242, 102, 0);
+    padding: 5px;
+    border-radius: 5px;
+    background: white;
+    color: rgb(242, 102, 0);
+    cursor: pointer;
+}
+
+#register-button {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
