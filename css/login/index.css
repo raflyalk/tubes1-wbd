@@ -17,13 +17,22 @@ h1 {
 
 .form-input {
     text-align: right;
+    margin-top: 5px;
+}
+
+.input-field-container {
     margin-right: 40px;
     margin-left: 40px;
-    margin-bottom: 5px;
 }
 
 .login-button {
     text-align: center;
+}
+
+.validation {
+    text-align: center;
+    font-size: 14px;
+    color: red;
 }
 
 #login-button {

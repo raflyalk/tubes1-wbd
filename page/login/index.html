@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link type="text/css" rel="stylesheet" href="../../css/login/index.css">
+</head>
+<body>
+    <div class="login-box">
+        <h1>LOGIN</h1>
+        <form class="login-form" action="/script/login.php" method="post">
+            <div class="input-field-container">
+                <div class="form-input">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" size="20">
+                </div>
+                <div class="validation" id="username-validation">
+
+                </div>
+                <div class="form-input">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" size="20">
+                </div>
+                <div class="validation" id="password-validation">
+
+                </div>
+            </div>
+            <div id="register-button">
+                <a href="">Don't have an account?</a>
+            </div>
+            <div class="login-button">
+                <input id="login-button" type="submit" value="LOGIN">
+            </div>
+        </form>
+    </div>
+    <script src="/script/login-validation.js"></script>
+</body>
+</html>
