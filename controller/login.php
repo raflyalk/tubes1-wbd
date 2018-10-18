@@ -1,7 +1,7 @@
 <?php
     if (isset($_POST["username"])) {
-        $redirectLink = "/view/test-login";
-        setcookie("username", $_POST["username"], time() + 1800, "/");
+        $redirectLink = "/view/profile";
+        setcookie("username", $_POST["username"], 0, "/");
         header("Location: " . $redirectLink);
         exit();
     }
