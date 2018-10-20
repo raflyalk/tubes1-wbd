@@ -7,6 +7,7 @@
     <head>
         <title>History</title>
         <link rel="stylesheet" href="/assets/global/global.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
     </head>
 
     <body>
