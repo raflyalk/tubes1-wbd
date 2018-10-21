@@ -33,6 +33,6 @@
             </div>
         </form>
     </div>
-    <script src="/controller/login-validation.js"></script>
+    <script src="/view/login/login-validation.js"></script>
 </body>
 </html>

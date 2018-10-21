@@ -1,4 +1,6 @@
 <?php
+    include "/model/login.php";
+
     if (isset($_POST["username"])) {
         $redirectLink = "/view/profile";
         setcookie("username", $_POST["username"], 0, "/");
