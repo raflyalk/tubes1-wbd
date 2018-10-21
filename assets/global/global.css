@@ -1,0 +1,100 @@
+.container {
+    width: 50%;
+    margin: auto;
+}
+
+.top-navbar {
+    background-color: rgb(0, 174, 239);
+    height: 63px;
+}
+
+.bottom-navbar {
+    background-color: rgb(0, 148, 204);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.top-right-navbar {
+    height: 35px;
+}
+
+.top-right-navbar.logout {
+    width: 63px;
+    height: inherit;
+    padding: 0;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li h1 {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.top-right-navbar {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: rgb(0, 174, 239);
+}
+
+.active {
+    background-color: rgb(242, 102, 0);
+}
+
+.top-right-navbar {
+    float: right;
+}
+
+.pro-logo {
+    color: rgb(242, 216, 0);
+}
+
+.header-logo {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+li .logout-button {
+    background-color: rgb(242, 102, 0);
+    border: none;
+    color: white;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    height: 100%;
+}
+
+.bottom-navbar li {
+    width: 33.33%;
+}
+
+.logout-button img {
+    padding: 14px 16px;
+    width: 33;
+}
