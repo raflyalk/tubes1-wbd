@@ -105,6 +105,7 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
+  `fullname` varchar(140) NOT NULL,
   `pass` varchar(30) NOT NULL,
   `prof_pic` text,
   `email` varchar(100) DEFAULT NULL,
@@ -133,4 +134,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-21  9:36:51
+-- Dump completed on 2018-10-21 12:26:50
