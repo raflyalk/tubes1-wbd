@@ -2,6 +2,18 @@ h1 {
     margin: 0;
     margin-bottom: 20px;
     text-align: center;
+    font-family: 'Pathway Gothic One', sans-serif;
+    letter-spacing: 5px;
+    font-size: 60px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+input {
+    border-style: groove;
+    font-family: inherit;
 }
 
 .login-box {
@@ -35,13 +47,23 @@ h1 {
     color: red;
 }
 
+.error-message {
+    border: 1px solid #D9534F;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+}
+
 #login-button {
-    border: 1px solid rgb(242, 102, 0);
+    border: 1px solid #F26600;
     padding: 5px;
     border-radius: 5px;
     background: white;
     color: rgb(242, 102, 0);
     cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 #register-button {

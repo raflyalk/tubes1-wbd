@@ -1,13 +1,26 @@
+<?php
+    $errorMessage = '';
+    if (isset($_GET["loginFailed"]) and $_GET["loginFailed"] === 'true') {
+        $errorMessage = '
+        <div class="error-message">
+            Username/Password is incorrect
+        </div>
+        ';
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
     <link type="text/css" rel="stylesheet" href="/view/login/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pathway+Gothic+One" rel="stylesheet">
 </head>
 <body>
     <div class="login-box">
         <h1>LOGIN</h1>
+        <?php echo $errorMessage; ?>
         <form class="login-form" action="/controller/login.php" method="post">
             <div class="input-field-container">
                 <div class="form-input">

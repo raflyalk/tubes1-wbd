@@ -1,30 +1,16 @@
 <?php
+include_once($_SERVER["DOCUMENT_ROOT"] . "/model/database.php");
 
 function findUsernamePassword($username, $password) {
+    $query = "SELECT * FROM user WHERE username='" . $username . "' AND pass='" . $password . "'";
+    global $mysqli;
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "12345678";
-    $dbname = "bookstore";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    $sql = "SELECT * FROM user WHERE username=" . $username . " AND password=" . $password;
-    $result = $conn->query($sql);
+    $result = $mysqli->query($query);
+    error_log($result, 0);
 
     if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        setcookie(userId, $row["id"], 0, "/");
-        $header = "Location: /view/profile";
-        exit($header);
+        return $result->fetch_assoc();
     } else {
-        echo "0 results";
-        $header = "Location: /view/login?failedLogin=true";
-        exit($header);
+        return null;
     }
 }
