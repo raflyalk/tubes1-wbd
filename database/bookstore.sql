@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: TOKOBOOK
+-- Host: 127.0.0.1    Database: bookstore
 -- ------------------------------------------------------
 -- Server version	8.0.12
 
@@ -27,8 +27,9 @@ CREATE TABLE `book` (
   `title` varchar(50) NOT NULL,
   `author` varchar(100) NOT NULL,
   `description` text,
+  `image_link` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +38,7 @@ CREATE TABLE `book` (
 
 LOCK TABLES `book` WRITE;
 /*!40000 ALTER TABLE `book` DISABLE KEYS */;
+INSERT INTO `book` (`book_id`, `title`, `author`, `description`, `image_link`) VALUES (1,'Interaction Design','Jennifer Preece','Buku mata kuliah Interaksi Manusia Komputer','https://media.wiley.com/product_data/coverImage300/51/11190207/1119020751.jpg'),(4,'Artificial Intelligence','Stuart Russel','Buku mata kuliah Inteligensi Buatan','https://www.pearsonhighered.com/assets/bigcovers/0/1/3/3/0133001989.jpg');
 /*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,13 +54,13 @@ CREATE TABLE `orders` (
   `user_id` int(11) NOT NULL,
   `book_id` int(11) NOT NULL,
   `num_book` int(11) NOT NULL,
-  `datum` date NOT NULL,
+  `order_date` date NOT NULL,
   PRIMARY KEY (`order_id`),
   KEY `book_id` (`book_id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`),
   CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,6 +69,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` (`order_id`, `user_id`, `book_id`, `num_book`, `order_date`) VALUES (1,1,1,2,'2018-10-02'),(2,1,4,10,'2018-10-14'),(3,2,4,1,'2018-08-06');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,7 +82,7 @@ DROP TABLE IF EXISTS `review`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `review` (
   `order_id` int(11) NOT NULL,
-  `star_sum` int(11) DEFAULT NULL,
+  `rating` int(11) DEFAULT NULL,
   `content` text,
   PRIMARY KEY (`order_id`),
   CONSTRAINT `review_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`)
@@ -92,6 +95,7 @@ CREATE TABLE `review` (
 
 LOCK TABLES `review` WRITE;
 /*!40000 ALTER TABLE `review` DISABLE KEYS */;
+INSERT INTO `review` (`order_id`, `rating`, `content`) VALUES (2,4,'Good');
 /*!40000 ALTER TABLE `review` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,7 +117,7 @@ CREATE TABLE `user` (
   `phone_num` varchar(30) DEFAULT NULL,
   `stat` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,6 +126,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` (`user_id`, `username`, `fullname`, `pass`, `prof_pic`, `email`, `addrs`, `phone_num`, `stat`) VALUES (1,'raflyalk','Muhammad Rafli Al Khadafi','1234','aaa','raflyalk@gmail.com','alamanda','081271371392',1),(2,'rifaldiu','Rifqi Rifaldi Utomo','4321','uuu','13516056@std.stei.itb.ac.id','tubis','081231313211',1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -134,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-21 12:26:50
+-- Dump completed on 2018-10-23 11:43:31
