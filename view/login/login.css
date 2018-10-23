@@ -24,6 +24,7 @@ input {
     border-radius: 5px;
     padding: 20px;
     width: fit-content;
+    width: -moz-fit-content;
     margin: auto;
 }
 

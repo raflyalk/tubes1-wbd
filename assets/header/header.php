@@ -1,20 +1,15 @@
-<?php
-    // Username will use from cookies later on!
-    $username = "tayotayo";
-?>
-
 <div class="top-navbar">
     <ul>
         <li class="navbar-logo">
             <h1 class="header-logo"><span class="pro-logo">Pro</span>-Book</h1>
         </li>
         <li class="top-right-navbar logout">
-            <button class="logout-button">
+            <a href="/controller/logout.php" class="logout-button">
                 <img src="/assets/images/power.png">
-            </button>
+            </a>
         </li>
-        <li class="top-right-navbar">
-            <span>Hi, <?php echo $username ?></span>
+        <li class="top-right-navbar user-greeting">
+            <div>Hi, <?php echo $username ?></div>
         </li>
     </ul>
 </div>
@@ -24,15 +19,15 @@
             <?php if ($_SESSION['activeTab'] === 'browse') {
                 echo 'class="active"';
             }?>
-        ><a href="#">Browse</a></li>
+        ><a href="/view/search-books">Browse</a></li>
         <li
             <?php if ($_SESSION['activeTab'] === 'history') {
                 echo 'class="active"';
             }?>
-        ><a href="#">History</a></li>
+        ><a href="/view/history">History</a></li>
         <li <?php if ($_SESSION['activeTab'] === 'profile') {
                 echo 'class="active"';
             }?>
-        ><a href="#">Profile</a></li>
+        ><a href="/view/profile">Profile</a></li>
     </ul>
 </div>
