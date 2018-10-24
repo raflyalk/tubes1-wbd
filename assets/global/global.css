@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-    width: 50%;
+    width: 500px;
     margin: auto;
 }
 
@@ -51,6 +51,7 @@ li h1 {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-size: 28px;
 }
 
 li.top-right-navbar {
