@@ -85,15 +85,11 @@ function addEmailValidation() {
         } else if (xmlhttp.responseText === "available") {
             emailValidationIcon.innerHTML = '<img src="/assets/images/right.png">';
             emailValidationText.innerHTML = '';
-        } else {
-            emailValidationIcon.innerHTML = '???';
-            emailValidationText.innerHTML = xml.responseText;
         }
     }
 }
 
 function getEmail(email) {
-    // var encodedEmail = encodeURIComponent(email);
     var qry = 'email=' + email;
     var url = '/controller/register.php?' + qry;
     xmlhttp.open('GET', url, true);
