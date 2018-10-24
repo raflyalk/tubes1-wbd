@@ -38,4 +38,13 @@ if (isset($_GET['username'])) {
     }
 }
 
+if (isset($_GET['email'])) {
+    header('Content-Type: text/plain');
+    if (isEmailExist($_GET['email'])) {
+        echo 'taken';
+    } else {
+        echo 'available';
+    }
+}
+
 ?>
