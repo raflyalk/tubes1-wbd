@@ -3,7 +3,7 @@
     include ($_SERVER["DOCUMENT_ROOT"] . "/model/history.php");
 
     if (!isset($_COOKIE["userId"])) {
-        header("Location: /view/login?redirectFrom=edit-profile");
+        header("Location: /view/login?auth=false");
         exit();
     }
 

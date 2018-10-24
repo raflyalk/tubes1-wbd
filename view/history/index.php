@@ -3,7 +3,7 @@
     include ($_SERVER["DOCUMENT_ROOT"] . "/model/history.php");
 
     if (!isset($_COOKIE["userId"])) {
-        header("Location: /view/login?redirectFrom=history");
+        header("Location: /view/login?auth=false");
         exit();
     }
 
@@ -52,11 +52,6 @@
             <?php include ($_SERVER[DOCUMENT_ROOT] . "/assets/header/header.php"); ?>
             <div class="content">
                 <h1>History</h1>
-                <?php
-//                    while ($row = $historyList->fetch_assoc()) {
-//                        print_r( $row);
-//                    }
-                ?>
                 <ul>
                     <?php
                         echo $historyView;
