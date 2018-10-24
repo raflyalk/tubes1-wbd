@@ -9,7 +9,7 @@
 <body>
     <div class="register-box">
     <h1>REGISTER</h1>
-    <form class="register-form" action="" method="post">
+    <form class="register-form" action="/controller/register.php" method="post">
         <table class="input-field-container">
             <colgroup>
                 <col style="width:40%">
