@@ -19,22 +19,33 @@ function getXmlHttpRequest() {
     return xmlHttpObj;
 }
 
+function validateFullname() {
+    var fullname = document.getElementById('fullname').value;
+    var fullnameValidationText = document.getElementById('fullname-validation-text')
+    if (fullname.length === 0) {
+        fullnameValidationText.innerHTML = 'This field is required'
+    }
+}
+
+var fullname = document.getElementById('fullname');
+fullname.onchange = validateFullname;
+
 function addUsernameValidation() {
-    console.log('sampai username validation');
-    console.log(xmlhttp.readyState);
-    console.log(xmlhttp.status);
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        var usernameValidation = document.getElementById('username-validation')
+        var usernameValidationIcon = document.getElementById('username-validation-icon')
+        var usernameValidationText = document.getElementById('username-validation-text')
         if (xmlhttp.responseText === "taken") {
-            usernameValidation.innerHTML = 'boo'
+            usernameValidationIcon.innerHTML = 'boo'
+            usernameValidationText.innerHTML = '<font color="red">Username is already taken</font>'
         } else if (xmlhttp.responseText === "available") {
-            usernameValidation.innerHTML = 'yay'
+            usernameValidationIcon.innerHTML = 'yay'
+            usernameValidationText.innerHTML = ''
         }
     }
 }
 
-function getUsername() {
-    var username = document.getElementById('username').value;
+function getUsername(username) {
+    // var username = document.getElementById('username').value;
     var qry = 'username=' + username;
     var url = '/controller/register.php?' + qry;
     xmlhttp.open('GET', url, true);
@@ -42,5 +53,20 @@ function getUsername() {
     xmlhttp.send(null);
 }
 
+function validateUsername() {
+    var username = document.getElementById('username').value;
+    var usernameValidationIcon = document.getElementById('username-validation-icon')
+    var usernameValidationText = document.getElementById('username-validation-text')
+    if (username.length === 0) {
+        usernameValidationIcon.innerHTML = 'boo'
+        usernameValidationText.innerHTML = 'This field is required'
+    } else if (username.length > 20) {
+        usernameValidationIcon.innerHTML = 'boo'
+        usernameValidationText.innerHTML = 'Username must not exceed 20 characters'
+    } else {
+        getUsername(username)
+    }
+}
+
 var username = document.getElementById('username');
-username.onchange = getUsername;
+username.onchange = validateUsername;

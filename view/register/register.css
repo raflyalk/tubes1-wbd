@@ -16,6 +16,16 @@ input {
     font-family: inherit;
 }
 
+textarea {
+    resize: none;
+    overflow: auto;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+}
+
 .register-box {
     border-bottom: 30px solid #04aeee;
     border-top: 30px solid #04aeee;
@@ -28,9 +38,8 @@ input {
     margin: auto;
 }
 
-.form-input {
+.form-label {
     text-align: right;
-    margin-top: 5px;
 }
 
 .input-field-container {
@@ -42,9 +51,8 @@ input {
     text-align: center;
 }
 
-.validation {
-    text-align: center;
-    font-size: 14px;
+.validation-text {
+    font-size: 10px;
     color: red;
 }
 
@@ -70,4 +78,13 @@ input {
 #login-button {
     margin-top: 10px;
     margin-bottom: 5px;
+}
+
+#address-label {
+    vertical-align: text-top;
+}
+
+#register-button {
+    width: fit-content;
+    width: -moz-fit-content;
 }

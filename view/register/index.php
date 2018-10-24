@@ -10,36 +10,64 @@
     <div class="register-box">
     <h1>REGISTER</h1>
     <form class="register-form" action="" method="post">
-        <table class="input-field-container">
-            <tr class="form-input">
-                <td><label for="fullname">Name</label></td>
-                <td><input type="text" id="fullname" name="fullname" size="20"></td>
+        <table border=0 class="input-field-container">
+            <tr>
+                <td class="form-label"><label for="fullname">Name</label></td>
+                <td colspan="2"><input type="text" id="fullname" name="fullname"></td>
             </tr>
-            <tr class="form-input">
-                <td><label for="username">Username</label></td>
-                <td><input type="text" id="username" name="username" size="20"></td>
-                <td><span id="username-validation">ok</span></td>
+            <tr>
+                <td></td>
+                <td colspan="2" class="validation-text" id="fullname-validation-text"><!-- --></td>
             </tr>
-            <tr class="form-input">
-                <td><label for="email">Email</label></td>
-                <td><input type="text" id="email" name="email" size="20"></td>
-                <td><span id="email-validation">ok</span></td>
+            <tr>
+                <td class="form-label"><label for="username">Username</label></td>
+                <td><input type="text" id="username" name="username"></td>
+                <td><span id="username-validation-icon"><!-- --></span></td>
             </tr>
-            <tr class="form-input">
-                <td><label for="password">Password</label></td>
-                <td><input type="password" id="password" name="password" size="20"></td>
+            <tr>
+                <td></td>
+                <td colspan="2" class="validation-text" id="username-validation-text"><!-- --></td>
             </tr>
-            <tr class="form-input">
-                <td><label for="confirmpassword">Congirm Password</label></td>
-                <td><input type="password" id="confirmpassword" name="confirmpassword" size="20"></td>
+            <tr>
+                <td class="form-label"><label for="email">Email</label></td>
+                <td><input type="text" id="email" name="email"></td>
+                <td><span id="email-validation-icon"><!-- --></span></td>
             </tr>
-            <tr class="form-input">
-                <td><label for="address">Address</label></td>
-                <td><textarea id="address" name="address" width="20" height="10"></textarea></td>
+            <tr>
+                <td></td>
+                <td colspan="2" class="validation-text" id="email-validation-text"><!-- --></td>
             </tr>
-            <tr class="form-input">
-                <td><label for="phonenumber">Phone Number</label></td>
-                <td><input type="text" id="phonenumber" name="phonenumber" size="20"></td>
+            <tr>
+                <td class="form-label"><label for="password">Password</label></td>
+                <td colspan="2"><input type="password" id="password" name="password"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2" class="validation-text" id="password-validation-text"><!-- --></td>
+            </tr>
+            <tr>
+                <td class="form-label"><label for="confirmpassword">Confirm Password</label></td>
+                <td colspan="2"><input type="password" id="confirmpassword" name="confirmpassword"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2" class="validation-text" id="confirmpassword-validation-text"><!-- --></td>
+            </tr>
+            <tr>
+                <td class="form-label" id="address-label"><label for="address">Address</label></td>
+                <td colspan="2"><textarea rows="3" id="address" name="address" width="20" height="10"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2" class="validation-text" id="address-validation-text"><!-- --></td>
+            </tr>
+            <tr>
+                <td class="form-label"><label for="phonenumber">Phone Number</label></td>
+                <td colspan="2"><input type="text" id="phonenumber" name="phonenumber"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2" class="validation-text" id="phonenumber-validation-text"><!-- --></td>
             </tr>
         </table>
         <div id="login-button">
