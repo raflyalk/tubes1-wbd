@@ -26,13 +26,16 @@
     margin: 0px;
 }
 
-.content .image-holder {
-    width: max-content;
-}
+/* .content .image-holder {
+    width: 100px;
+    height: 100px;
+} */
 
 .image-holder img {
-    height: 100px;
-    width: 100px;
+    display: block;
+    object-fit: contain;
+    width: 150px;
+    height: 150px;
     float: right;
     border: 1px solid #000000;
 }
@@ -45,34 +48,20 @@
     padding: auto;
 }
 
-/* .rating input:hover {
-    cursor: pointer;
-} */
-
-
-/* input[type="radio"] {
-    display: none;
+.validation {
+    font-size: 10px;
+    color: #FF0000;
+    margin-top: 3px;
+    margin-left: 3px;
 }
 
-
-input[type="radio"] + label {
-    background-image:url(/assets/images/blank-star-64.png);
-    height: 64px;
-    width: 64px;
-    display:inline-block;
-    padding: 0 0 0 0px;
-    cursor:pointer;
+#comment-holder {
+    margin-bottom: 20px;
 }
 
-input[type="radio"]:checked + label {
-    background-image:url(/assets/images/full-star-64.png);
-    cursor:pointer;
-} */
 #comment {
     resize: none;
     width: 100%;
-    margin-top: 10px;
-    margin-bottom: 30px;
 }
 
 #back {
@@ -105,87 +94,4 @@ input[type="radio"]:checked + label {
 #submit:hover {
     background-color: #157db8;
     border: 1px solid #157db8;
-    /* color:#188BCD;
-    border: 1px solid #188BCD; */
 }
-
-
-/* .content > h1 {
-    margin-bottom: 20px;
-}
-
-.content > ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.content .list-content {
-    margin: 0 0 30px 0;
-}
-
-.content .list-content .image-holder {
-    border: 1px solid rgb(70, 70, 70);
-}
-
-.content .list-content .image-holder img {
-    display: block;
-    height: 100px;
-    margin: auto;
-
-}
-
-.content .flex-container {
-    display: flex;
-    justify-content: stretch;
-}
-
-.content .flex-container > div {
-    width: 100px;
-    font-size: 12px;
-}
-
-.content .flex-container > div.left-text-holder {
-    flex-grow: 1;
-    margin: 0 10px;
-}
-
-.content .flex-container > div.right-text-holder {
-    text-align: right;
-    width: 150px;
-    position: relative;
-}
-
-.content .flex-container > div.right-text-holder > .review-button {
-    position: absolute;
-    bottom: 1px;
-    right: 1px;
-}
-
-.content .flex-container > div.right-text-holder > .review-button > a {
-    display: block;
-    background-color: #04aeee;
-    color: white;
-    padding: 5px;
-    text-decoration: none;
-}
-
-button {
-    background-color: #04aeee;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 6px;
-    cursor: pointer;
-}
-
-a {
-    text-decoration: none;
-}
-
-.content h2 {
-    margin: 0;
-    margin-bottom: 5px;
-    font-size: 20px;
-    color: rgb(242, 102, 0);
-} */

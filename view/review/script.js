@@ -19,22 +19,10 @@ function validateRating() {
     }
 }
 
-function validateFullname() {
-    var fullname = document.getElementById('fullname').value;
-    var fullnameValidationText = document.getElementById('fullname-validation-text')
-    if (fullname.length === 0) {
-        fullnameValidationText.innerHTML = 'This field is required';
-        return false;
-    } else {
-        fullnameValidationText.innerHTML = '';
-        return true;
-    }
-}
-
 function validateComment() {
-    var comment_length = document.getElementById('comment').value.length;
+    var comment = document.getElementById('comment').value;
     var commentValidation = document.getElementById('comment-validation');
-    if (comment_length === 0) {
+    if (comment.length === 0) {
         console.log('here3')
         commentValidation.innerText = 'This field is required';
         return false;
@@ -49,8 +37,8 @@ var rating = document.getElementsByName('rating');
 var comment = document.getElementById('comment');
 var reviewForm = document.getElementById('review-form');
 
-// rating.onclick = validateRating();
-comment.onchange = validateComment();
+rating.onclick = validateRating;
+comment.onchange = validateComment;
 
 reviewForm.onsubmit = () => {
     validateRating();
