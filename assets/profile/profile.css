@@ -20,11 +20,13 @@
 }
 
 #avatar-img{
+    vertical-align: middle;
     align-content: center;
     border-radius: 50%;
-    width:25%;
-    height: 50%;
+    width:130px;
+    height: 130px;
     object-fit: cover;
+    border: 5px solid #f2d800;
 }
 
 .white-font{

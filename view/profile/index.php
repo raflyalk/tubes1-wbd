@@ -7,7 +7,7 @@
         exit();
     }
     session_start();
-    $_SESSION["activeTab"] = "history";
+    $_SESSION["activeTab"] = "profile";
 
     //Get User From Database
 
@@ -44,7 +44,7 @@
             echo $userDat;
         ?>
         <div class="container">
-            <?php include ($_SERVER[DOCUMENT_ROOT] . "/assets/header/header.php"); ?>
+            <?php include ($_SERVER['DOCUMENT_ROOT'] . "/assets/header/header.php"); ?>
             <div class="content">
                 <div class="pic-cont">
                     <div align="right">
