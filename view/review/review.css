@@ -34,8 +34,40 @@
     height: 100px;
     width: 100px;
     float: right;
+    border: 1px solid #000000;
 }
 
+.rating {
+    display: inline-block;
+    position: relative;
+    height: max-content;
+    width: 100%;
+    padding: auto;
+}
+
+/* .rating input:hover {
+    cursor: pointer;
+} */
+
+
+/* input[type="radio"] {
+    display: none;
+}
+
+
+input[type="radio"] + label {
+    background-image:url(/assets/images/blank-star-64.png);
+    height: 64px;
+    width: 64px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    cursor:pointer;
+}
+
+input[type="radio"]:checked + label {
+    background-image:url(/assets/images/full-star-64.png);
+    cursor:pointer;
+} */
 #comment {
     resize: none;
     width: 100%;
