@@ -49,7 +49,7 @@
                     ?>
                 </div>
                 <form id="review-form" action="/controller/review.php" method="POST">
-                    <input type='hidden' name='order_id' value='<?php echo "orderId";?>'/> 
+                    <input type='hidden' name='order_id' value='<?php echo $orderId;?>'/> 
                     <div id="rating-holder">
                         <h2>Add Rating</h2>
                         <input type="radio" name="rating" id="star1" value="1"> 1

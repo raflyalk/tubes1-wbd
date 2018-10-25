@@ -24,21 +24,7 @@ function getBookDetail($orderId) {
 
 function insertReview($orderId, $rating, $content) {
     global $mysqli;
-    $query = "
-        SELECT DISTINCT
-        book.title,
-        book.author,
-        book.image_link
-        FROM
-        orders INNER JOIN  book ON orders.book_id = book.book_id
-        WHERE order_id=" . $orderId . ";
-    ";
 
+    $query = "INSERT INTO review (order_id, rating, content) VALUES (" . $orderId . ", " . $rating . ", '" . $content . "');";
     $result = $mysqli->query($query);
-    
-    if ($result->num_rows > 0) {
-        return $result->fetch_assoc();
-    } else {
-        return null;
-    }
 }
