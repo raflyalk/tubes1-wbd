@@ -28,8 +28,10 @@
         <div class="container">
             <?php include ($_SERVER['DOCUMENT_ROOT'] . "/assets/header/header.php"); ?>
             <h1 class="head-txt">Search Book</h1>
-            <input type="text" id="search-txt" placeholder="input search terms"/>
-            <button class="sub-button">Search</button>
+            <form action="/view/search-results" method="get">
+                <input type="text" id="search-txt" placeholder="input search terms" name="search-txt"/>
+                <input type="submit" value="Search" class="sub-button"/>
+            </form>
         </div>
     </body>
 </html>
