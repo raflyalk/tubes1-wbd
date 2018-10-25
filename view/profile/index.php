@@ -18,7 +18,7 @@
     $userDat = getProfileData($user["user_id"]);
     $userPic = '
     <div class="white-font" align="center">
-        <img id="avatar-img" src="/assets/images/' . $user["prof_pic"] . '"/>
+        <img id="avatar-img" src="' . $user["prof_pic"] . '"/>
         <h2>'.$user["fullname"] . '</h2>
     </div>';
     $userInf = '
