@@ -52,11 +52,28 @@
                     <input type='hidden' name='order_id' value='<?php echo $orderId;?>'/> 
                     <div id="rating-holder">
                         <h2>Add Rating</h2>
-                        <input type="radio" name="rating" id="star1" value="1"> 1
-                        <input type="radio" name="rating" id="star2" value="2"> 2
-                        <input type="radio" name="rating" id="star3" value="3"> 3
-                        <input type="radio" name="rating" id="star4" value="4"> 4
-                        <input type="radio" name="rating" id="star5" value="5"> 5
+                        <div id="rating-star-holder">
+                            <label>
+                                <input type="radio" name="rating" value="1">
+                                <img class="rating-img" id="star1" src="/assets/images/blank-star-64.png">
+                            </label>
+                            <label>
+                                <input type="radio" name="rating" value="2">
+                                <img class="rating-img" id="star2" src="/assets/images/blank-star-64.png">
+                            </label>
+                            <label>
+                                <input type="radio" name="rating" value="3">
+                                <img class="rating-img" id="star3" src="/assets/images/blank-star-64.png">
+                            </label>
+                            <label>
+                                <input type="radio" name="rating" value="4">
+                                <img class="rating-img" id="star4" src="/assets/images/blank-star-64.png">
+                            </label>
+                            <label>
+                                <input type="radio" name="rating" value="5">
+                                <img class="rating-img" id="star5" src="/assets/images/blank-star-64.png">
+                            </label>
+                        </div>
                         <div class="validation" id="rating-validation"><!-- --></div>
                     </div>
                     <div id="comment-holder">                    
