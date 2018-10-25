@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: bookstore
 -- ------------------------------------------------------
--- Server version	8.0.12
+-- Server version	5.5.5-10.1.36-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +29,7 @@ CREATE TABLE `book` (
   `description` text,
   `image_link` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,7 +60,7 @@ CREATE TABLE `orders` (
   KEY `user_id` (`user_id`),
   CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`),
   CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -86,7 +86,7 @@ CREATE TABLE `review` (
   `content` text,
   PRIMARY KEY (`order_id`),
   CONSTRAINT `review_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,7 +117,7 @@ CREATE TABLE `user` (
   `phone_num` varchar(30) DEFAULT NULL,
   `stat` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,7 +126,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'raflyalk','Muhammad Rafli Al Khadafi','1234','aaa','raflyalk@gmail.com','alamanda','081271371392',1),(2,'rifaldiu','Rifqi Rifaldi Utomo','4321','uuu','13516056@std.stei.itb.ac.id','tubis','081231313211',1);
+INSERT INTO `user` VALUES (1,'raflyalk','Muhammad Rafli Al Khadafi','1234','https://i.ytimg.com/vi/fpmua2YTu7M/maxresdefault.jpg','raflyalk@gmail.com','alamanda','081271371392',1),(2,'rifaldiu','Rifqi Rifaldi Utomo','4321','https://image-store.slidesharecdn.com/ce94d2fc-fe31-424d-8602-fc8af5368964-original.jpeg','13516056@std.stei.itb.ac.id','tubis','081231313211',1),(3,'aufaX45','Muhammad Aufa Helfiandri','kodokbeku','https://scontent-sin2-1.cdninstagram.com/vp/774930452d5dbcfb8b157edf678c2d15/5C6C1C92/t51.2885-15/e35/43779419_180566459493711_879659407431682033_n.jpg','13516008@std.stei.itb.ac.id','di hatimu','08911911911911',1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -139,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-23 12:56:19
+-- Dump completed on 2018-10-25 13:47:06
