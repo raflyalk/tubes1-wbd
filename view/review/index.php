@@ -60,7 +60,7 @@
                 <div class ="image-holder"><img src="https://store-images.s-microsoft.com/image/apps.34477.9007199266245907.4a4e2c37-33a9-40ae-8daf-c3b4776b9a89.41c21cd6-697f-4de5-b77c-4ef74a2bfedc?mode=scale&q=90&h=270&w=270&background=%234267B2" alt=""></div>
                 </div>
                 <h2>Add Rating</h2>
-                <div class="rating">Rating</div>
+                <div class="rating"><img src="/assets/images/blank-star-64.png" alt=""></div>
                 <h2>Add Comment</h2>
                 <form action="">
                     <textarea name="comment" id="comment" rows="5"></textarea>
