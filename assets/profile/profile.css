@@ -13,15 +13,19 @@
     height:50px;
     width:50px;
     background: #00374C;
+    border-width:0px;
+    border: none;
 }
 
 #img-but1{
     width: 100%;
+    border: none;
 }
 
 #avatar-img{
     vertical-align: middle;
     align-content: center;
+    margin: -15px 0 0 0;
     border-radius: 50%;
     width:130px;
     height: 130px;
