@@ -1,4 +1,5 @@
 function validateRating() {
+    console.log('val rate')
     var rating = document.getElementsByName('rating');
     var checked = false;
     for (var i = 0; i < rating.length; i++) {
@@ -13,7 +14,19 @@ function validateRating() {
         return false;
     } else {
         console.log('here2')
-        ratingValidation.innerText = 't';
+        ratingValidation.innerText = '';
+        return true;
+    }
+}
+
+function validateFullname() {
+    var fullname = document.getElementById('fullname').value;
+    var fullnameValidationText = document.getElementById('fullname-validation-text')
+    if (fullname.length === 0) {
+        fullnameValidationText.innerHTML = 'This field is required';
+        return false;
+    } else {
+        fullnameValidationText.innerHTML = '';
         return true;
     }
 }
@@ -27,7 +40,7 @@ function validateComment() {
         return false;
     } else {
         console.log('here4')
-        commentValidation.innerText = 't';
+        commentValidation.innerText = '';
         return true;
     }
 }
@@ -36,11 +49,13 @@ var rating = document.getElementsByName('rating');
 var comment = document.getElementById('comment');
 var reviewForm = document.getElementById('review-form');
 
-rating.onclick = validateRating();
+// rating.onclick = validateRating();
 comment.onchange = validateComment();
 
 reviewForm.onsubmit = () => {
-    if (!(validateRating() || validateComment())) {
+    validateRating();
+    validateComment();
+    if (!(validateRating() && validateComment())) {
         return false;
     } else {
         return true;
