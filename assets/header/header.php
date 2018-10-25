@@ -1,7 +1,7 @@
 <div class="top-navbar">
     <ul>
         <li class="navbar-logo">
-            <h1 class="header-logo"><span class="pro-logo">Pro</span>-Book</h1>
+            <a href="/view/profile"><h1 class="header-logo"><span class="pro-logo">Pro</span>-Book</h1></a>
         </li>
         <li class="top-right-navbar logout">
             <a href="/controller/logout.php" class="logout-button">
@@ -9,7 +9,7 @@
             </a>
         </li>
         <li class="top-right-navbar user-greeting">
-            <div>Hi, <?php echo $username ?></div>
+            <div><a href="/view/profile">Hi, <?php echo $username ?></a></div>
         </li>
     </ul>
 </div>

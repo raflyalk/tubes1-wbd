@@ -37,12 +37,21 @@ body {
     float: left;
 }
 
-.bottom-navbar li a, .top-navbar li a {
+.bottom-navbar li a, li.logout a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+.navbar-logo > a {
+    text-decoration: none;
+}
+
+.user-greeting a {
+    text-decoration: underline;
+    color: white;
 }
 
 .bottom-navbar li a {
@@ -65,7 +74,7 @@ li.top-right-navbar {
     text-decoration: none;
 }
 
-.top-navbar li a:hover, .bottom-navbar li a:hover {
+li.logout a:hover, .bottom-navbar li a:hover {
     background-color: #e05e00;
 }
 
