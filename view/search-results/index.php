@@ -24,7 +24,7 @@
                     <div class="image-holder"><a href="/view/book-detail?book-id=' . $row["book_id"] . '"><img src="' . $row["image_link"] . '"></a></div>
                     <div class="left-text-holder">
                             <a href="/view/book-detail?book-id=' . $row["book_id"] . '"><h2>' . $row["title"] . '</h2></a>
-                            <div class="left-order-details"> <b>' . $row["author"] . ' - ' . '</b></div>
+                            <div class="left-order-details"> <b>' . $row["author"] . ' - ' . number_format($row["rate_avg"],1) . '/5.0 ('. $row["rate_count"].' votes)</b></div>
                             <div class="left-order-details">' . $row["description"] . '</div>
                     </div>
                     <div class="right-text-holder">
