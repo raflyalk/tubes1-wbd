@@ -40,9 +40,6 @@
     </head>
 
     <body>
-        <?php
-            echo $userDat;
-        ?>
         <div class="container">
             <?php include ($_SERVER['DOCUMENT_ROOT'] . "/assets/header/header.php"); ?>
             <div class="content">

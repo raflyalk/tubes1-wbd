@@ -7,7 +7,7 @@
         exit();
     }
     session_start();
-    $_SESSION["activeTab"] = "history";
+    $_SESSION["activeTab"] = "browse";
 
     //Get User From Database
 
