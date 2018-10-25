@@ -1,24 +1,6 @@
-// var xmlhttp = getXmlHttpRequest();
 var xmlhttp = new XMLHttpRequest();
-
-// function getXmlHttpRequest() {
-//     var xmlHttpObj;
-//     if (window.XMLHttpRequest) {
-//         xmlHttpObj = new XMLHttpRequest();
-//     } else {
-//         try {
-//             xmlHttpObj = new ActiveXObject("Msxml2.XMLHTTP");
-//         } catch (e) {
-//             try {
-//                 xmlHttpObj = new
-//                     ActiveXObject("Microsoft.XMLHTTP");
-//             } catch (e) {
-//                 xmlHttpObj = false;
-//             }
-//         }
-//     }
-//     return xmlHttpObj;
-// }
+let username_stat = '';
+let email_stat = '';
 
 function validateFullname() {
     var fullname = document.getElementById('fullname').value;
@@ -37,14 +19,17 @@ fullname.onchange = validateFullname;
 
 function addUsernameValidation() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        var usernameValidationIcon = document.getElementById('username-validation-icon')
-        var usernameValidationText = document.getElementById('username-validation-text')
-        if (xmlhttp.responseText === "taken") {
+        var usernameValidationIcon = document.getElementById('username-validation-icon');
+        var usernameValidationText = document.getElementById('username-validation-text');    
+        username_stat = xmlhttp.responseText;
+        if (username_stat === 'taken') {
             usernameValidationIcon.innerHTML = '<img src="/assets/images/wrong.png">';
             usernameValidationText.innerHTML = 'Username is already taken';
-        } else if (xmlhttp.responseText === "available") {
+            return false;
+        } else if (username_stat === 'available') {
             usernameValidationIcon.innerHTML = '<img src="/assets/images/right.png">';
             usernameValidationText.innerHTML = '';
+            return true;
         }
     }
 }
@@ -55,26 +40,12 @@ function getUsername(username) {
     xmlhttp.open('GET', url, true);
     xmlhttp.onreadystatechange = addUsernameValidation;
     xmlhttp.send(null);
-    console.log('here');
-    // while (! xmlhttp.responseText) {
-    //     // wait
-    // }
-    console.log('here 2');
-    if (xmlhttp.responseText === "taken") {
-        console.log('here 3');
-        return false;
-    } else if (xmlhttp.responseText === "available") {
-        console.log('here 4');
-        return true;
-    } else {
-        console.log('here 5');
-    }
 }
 
 function validateUsername() {
     var username = document.getElementById('username').value;
-    var usernameValidationIcon = document.getElementById('username-validation-icon')
-    var usernameValidationText = document.getElementById('username-validation-text')
+    var usernameValidationIcon = document.getElementById('username-validation-icon');
+    var usernameValidationText = document.getElementById('username-validation-text');
     if (username.length === 0) {
         usernameValidationIcon.innerHTML = '<img src="/assets/images/wrong.png">';
         usernameValidationText.innerHTML = 'This field is required';
@@ -89,14 +60,9 @@ function validateUsername() {
         return false;
     } else {
         getUsername(username);
-        if (xmlhttp.responseText === "taken") {
-            console.log('here 3');
+        if (username_stat === 'taken') {
             return false;
-        } else if (xmlhttp.responseText === "available") {
-            console.log('here 4');
-            return true;
-        } else {
-            console.log('here 5');
+        } else if (username_stat === 'available') {
             return true;
         }
     }
@@ -109,12 +75,15 @@ function addEmailValidation() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         var emailValidationIcon = document.getElementById('email-validation-icon');
         var emailValidationText = document.getElementById('email-validation-text');
-        if (xmlhttp.responseText === "taken") {
+        email_stat = xmlhttp.responseText;
+        if (email_stat === 'taken') {
             emailValidationIcon.innerHTML = '<img src="/assets/images/wrong.png">';
             emailValidationText.innerHTML = 'Email has been used';
-        } else if (xmlhttp.responseText === "available") {
+            return false;
+        } else if (email_stat === 'available') {
             emailValidationIcon.innerHTML = '<img src="/assets/images/right.png">';
             emailValidationText.innerHTML = '';
+            return true;
         }
     }
 }
@@ -142,9 +111,12 @@ function validateEmail() {
         return false;
     } else {
         getEmail(email);
-        return true;
+        if (email_stat === 'taken') {
+            return false;
+        } else if (email_stat === 'available') {
+            return true;
+        }
     }
-    
 }
 
 var email = document.getElementById('email');
@@ -229,6 +201,13 @@ phonenumber.onchange = validatePhonenumber;
 var registerForm = document.querySelector('.register-form');
 
 registerForm.onsubmit = () => {
+    validateFullname();
+    validateUsername();
+    validateEmail();
+    validatePassword();
+    validateConfirmPassword();
+    validateAddress();
+    validatePhonenumber();
     if (! (validateFullname() && validateUsername() && validateEmail() && validatePassword() && validateConfirmPassword() && validateAddress() && validatePhonenumber()) ) {
         return false;
     } else {
