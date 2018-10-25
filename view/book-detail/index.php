@@ -33,7 +33,7 @@
 
 <html>
     <head>
-        <title>Review</title>
+        <title>Book Detail #<?php echo $bookId?></title>
         <link rel="stylesheet" href="/assets/global/global.css">
         <link rel="stylesheet" href="/view/book-detail/book-detail.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -47,10 +47,10 @@
                     <div class="detail-holder">
                         <div class="book-title"><h1>Nota Hidup</h1></div>
                         <div class="book-author"><h3>Light D. R. B.</h3></div>
-                        <div class="book-description"><h3>Buku ajaib ini berisi nama-nama orang terpilih. Jika namamu tertulis di buku ini maka kamu adalah salah satu orang yang beruntung.</h3></div>
+                        <div class="book-description">Buku ajaib ini berisi nama-nama orang terpilih. Jika namamu tertulis di buku ini maka kamu adalah salah satu orang yang beruntung.</div>
                     </div>
                     <div class ="image-holder">
-                        <img src="/assets/images/blank-star-64.png" alt="">
+                        <img src="/assets/images/mail.png" alt="">
                     </div>
                     <div class ="rating-holder">
                         <div id= "rating-star-holder">
@@ -63,44 +63,41 @@
                         <div id="rating-number-holder">4.5/5.0</div>
                     </div>
                 </div>
-                <form id="review-form" action="/controller/review.php" method="POST">
-                    <input type='hidden' name='order_id' value='<?php echo $orderId;?>'/> 
-                    <div id="rating-holder">
-                        <h2>Add Rating</h2>
-                        <div id="rating-star-holder">
-                            <label>
-                                <input type="radio" name="rating" value="1">
-                                <img class="rating-img" id="star1" src="/assets/images/blank-star-64.png">
-                            </label>
-                            <label>
-                                <input type="radio" name="rating" value="2">
-                                <img class="rating-img" id="star2" src="/assets/images/blank-star-64.png">
-                            </label>
-                            <label>
-                                <input type="radio" name="rating" value="3">
-                                <img class="rating-img" id="star3" src="/assets/images/blank-star-64.png">
-                            </label>
-                            <label>
-                                <input type="radio" name="rating" value="4">
-                                <img class="rating-img" id="star4" src="/assets/images/blank-star-64.png">
-                            </label>
-                            <label>
-                                <input type="radio" name="rating" value="5">
-                                <img class="rating-img" id="star5" src="/assets/images/blank-star-64.png">
-                            </label>
-                        </div>
+                <form id="order-form" action="/controller/book-detail.php" method="POST">
+                    <input type='hidden' name='order_id' value='<?php echo $bookId;?>'/>
+                    <div id="order-holder">
+                        <h2>Order</h2>
+                        Jumlah: 
+                        <select name="total-order" id="total-order">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                            <option value=6>6</option>
+                            <option value=7>7</option>
+                            <option value=8>8</option>
+                            <option value=9>9</option>
+                            <option value=10>10</option>
+                        </select>
                         <div class="validation" id="rating-validation"><!-- --></div>
-                    </div>
-                    <div id="comment-holder">                    
-                        <h2>Add Comment</h2>
-                        <textarea name="comment" id="comment" rows="5"></textarea>
-                        <div class="validation" id="comment-validation"><!-- --></div>
-                    </div>
                     <div id="form-button">
-                        <input type="submit" name="action" id="back" value="Back">
-                        <input type="submit" name="action" id="submit" value="Submit">
+                        <input type="submit" id="submit-order-button" value="Submit">
                     </div>
                 </form>
+                <div id="review-holder">
+                    <h2>Review</h2>
+                    <img src="/assets/images/edit.png">
+                    <div class="comment-holder">
+                        <h3>@tayotoya</h3>
+                        Buku ini keren bet!!
+                    </div>
+                    <div class="rating-holder">
+                        <img src="/assets/images/full-star-64.png">
+                        4.0/5.0
+                    </div>
+                    <h3></h3>
+                </div>
             </div>
         </div>
         <script src="/view/review/script.js"></script>
