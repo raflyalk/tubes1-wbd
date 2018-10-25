@@ -49,18 +49,20 @@
                         <div class="book-author"><h3>Light D. R. B.</h3></div>
                         <div class="book-description">Buku ajaib ini berisi nama-nama orang terpilih. Jika namamu tertulis di buku ini maka kamu adalah salah satu orang yang beruntung.</div>
                     </div>
-                    <div class ="image-holder">
-                        <img src="/assets/images/mail.png" alt="">
-                    </div>
-                    <div class ="rating-holder">
-                        <div id= "rating-star-holder">
-                            <img src="/assets/images/full-star-64.png">
-                            <img src="/assets/images/full-star-64.png">
-                            <img src="/assets/images/full-star-64.png">
-                            <img src="/assets/images/full-star-64.png">
-                            <img src="/assets/images/blank-star-64.png">
+                    <div class="right-object-holder">
+                        <div class ="image-holder">
+                            <img src="/assets/images/mail.png" alt="">
                         </div>
-                        <div id="rating-number-holder">4.5/5.0</div>
+                        <div class ="rating-holder">
+                            <div id="rating-star-holder">
+                                <img class="rating-star" src="/assets/images/full-star-64.png">
+                                <img class="rating-star" src="/assets/images/full-star-64.png">
+                                <img class="rating-star" src="/assets/images/full-star-64.png">
+                                <img class="rating-star" src="/assets/images/full-star-64.png">
+                                <img class="rating-star" src="/assets/images/blank-star-64.png">
+                            </div>
+                            <div id="rating-number-holder">4.5/5.0</div>
+                        </div>
                     </div>
                 </div>
                 <form id="order-form" action="/controller/book-detail.php" method="POST">
