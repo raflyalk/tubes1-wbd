@@ -68,7 +68,7 @@
 
     if ($bookReview  == null) {
         $bookReviewView = '
-        <div class="center-holder">This book has no review yet</div>
+        This book has no review yet
         ';
     } else {
         while ($row = $bookReview->fetch_assoc()) {
