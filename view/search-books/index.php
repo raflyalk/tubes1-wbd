@@ -6,8 +6,7 @@
         header("Location: /view/login?auth=false");
         exit();
     }
-    session_start();
-    $_SESSION["activeTab"] = "history";
+    $activeTab = "browse";
 
     //Get User From Database
 

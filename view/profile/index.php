@@ -6,36 +6,21 @@
         header("Location: /view/login?auth=false");
         exit();
     }
-    session_start();
-    $_SESSION["activeTab"] = "history";
+
+    $activeTab = "profile";
 
     //Get User From Database
 
     $user = getUser($_COOKIE["userId"]);
     $username = $user["username"];
 
-    //Get Users data
-    $userDat = getProfileData($user["user_id"]);
-    $userPic = '
-    <div class="white-font" align="center">
-        <img id="avatar-img" src="/assets/images/' . $user["prof_pic"] . '"/>
-        <h2>'.$user["fullname"] . '</h2>
-    </div>';
-    $userInf = '
-    <div class="det2">
-        @' . $user['username'] . '<br><br>
-        ' . $user['email'] . '<br><br>
-        ' . $user['addrs'] . '<br><br>
-        ' . $user['phone_num'] . '<br><br>
-    </div>
-    ';
 ?>
 
 <html>
     <head>
         <title>Profile</title>
         <link rel = "stylesheet" href="/assets/global/global.css">
-        <link rel = "stylesheet" href="/assets/profile/profile.css">
+        <link rel = "stylesheet" href="/view/profile/profile.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     </head>
 
@@ -45,48 +30,56 @@
         ?>
         <div class="container">
             <?php include ($_SERVER[DOCUMENT_ROOT] . "/assets/header/header.php"); ?>
+
+            <div class="pic-cont">
+                <div id="edit-button">
+                    <a href="/view/edit-profile" ><img id="img-but1" class="inverted" src="/assets/images/edit.png" /></a>
+                </div>
+                <img id="avatar-img" src="<?php echo $user["prof_pic"] ?>"/>
+                <h2 id="fullname"><?php echo $user["fullname"] ?></h2>
+            </div>
+
             <div class="content">
-                <div class="pic-cont">
-                    <div align="right">
-                        <button id="but1">
-                            <a href="/view/edit-profile" ><img id="img-but1" class="inverted" src="/assets/images/edit.png" /></a>
-                        </button>
-                        <?php
-                            echo $userPic;
-                        ?>
-                    </div>
-                </div>
-                <div class="det-cont">
-                    <h2 class="orange-font">  My Profile </h2>
-                    <div class="more-det">
-                        <div class="det1">
-                            <span>
-                                <img class="icon" src="/assets/images/username.png"/>
-                                Username <br><br>
-                            </span>
-                            <span>
-                                <img class="icon" src="/assets/images/mail.png"/>
-                                Email<br><br>
-                            </span>
-                            <span>
-                                <img class="icon" src="/assets/images/address.png"/>
-                                Address<br><br>
-                            </span>
-                            <span>
-                                <img class="icon" src="/assets/images/phone.png"/>
-                                Phone Number<br><br>
-                            </span>
-                        </div>
+                <h2>My Profile</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img class="icon" src="/assets/images/username.png"/>
+                            Username
+                        </td>
+                        <td>
+                            <?php echo $user["username"] ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon" src="/assets/images/mail.png"/>
+                            Email
+                        </td>
+                        <td>
+                            <?php echo $user["email"] ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon" src="/assets/images/address.png"/>
+                            Address
+                        </td>
+                        <td>
+                            <?php echo $user["addrs"] ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="icon" src="/assets/images/phone.png"/>
+                            Phone Number
 
-                        <div class="det2">
-                            <?php
-                                echo $userInf;
-                            ?>
-                        </div>
-                        <div>
-                    </div>
-
-                </div>
+                        </td>
+                        <td>
+                            <?php echo $user["phone_num"] ?>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </body>

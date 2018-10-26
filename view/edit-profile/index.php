@@ -7,8 +7,7 @@
         exit();
     }
 
-    session_start();
-    $_SESSION["activeTab"] = "profile";
+    $activeTab = "profile";
 
     // Get user from database
 

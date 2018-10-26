@@ -16,16 +16,16 @@
 <div class="bottom-navbar">
     <ul>
         <li
-            <?php if ($_SESSION['activeTab'] === 'browse') {
+            <?php if ($activeTab === 'browse') {
                 echo 'class="active"';
             }?>
         ><a href="/view/search-books">Browse</a></li>
         <li
-            <?php if ($_SESSION['activeTab'] === 'history') {
+            <?php if ($activeTab === 'history') {
                 echo 'class="active"';
             }?>
         ><a href="/view/history">History</a></li>
-        <li <?php if ($_SESSION['activeTab'] === 'profile') {
+        <li <?php if ($activeTab === 'profile') {
                 echo 'class="active"';
             }?>
         ><a href="/view/profile">Profile</a></li>
