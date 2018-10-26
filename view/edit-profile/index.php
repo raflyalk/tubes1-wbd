@@ -16,6 +16,8 @@
             $profilePictureErrorMessage = 'Picture size should be less than 1MB';
         } else if ($_GET["picture-error"] === 'type') {
             $profilePictureErrorMessage = 'Picture should be an image type';
+        } else if ($_GET["picture-error"] === 'unknown') {
+            $profilePictureErrorMessage = 'Unknown error occurred while uploading';
         }
     }
 
@@ -75,7 +77,7 @@
                             </td>
                             <td>
                                 <input type="tel" id="phone-number" name="phoneNumber" value="<?php echo $user["phone_num"] ?>">
-                                <div class="validation phone-number hidden">Phone Number cannot be empty</div>
+                                <div class="validation phone-number hidden">Phone Number should be between 9 to 12</div>
                             </td>
                         </tr>
 
