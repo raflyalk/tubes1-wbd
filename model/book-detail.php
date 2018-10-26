@@ -32,7 +32,7 @@ function getBookReview($bookId) {
     
     $result = $mysqli->query($query);
 
-    if ($result->num_row <= 0) {
+    if ($result->num_rows <= 0) {
         return null;
     }
     return $result;
@@ -41,14 +41,18 @@ function getBookReview($bookId) {
 function createOrder($userId, $bookId, $numBook) {
     global $mysqli;
 
-    $query="
-    INSERT INTO orders (user_id, book_id, num_book, order_date)
-    VALUES (" . $userId . ", " . $bookId . ", " . $numBook . ", '" . date("Y-m-d") . "');
-    SELECT LAST_INSERT_ID();
-    ";
+    $date = date("Y-m-d");
 
+    $query="
+        INSERT INTO orders (user_id, book_id, num_book, order_date)
+        VALUES (" . $userId . ", " . $bookId . ", " . $numBook . ", '" . $date . "');
+        ";
     $result = $mysqli->query($query);
-    return $result;
+    $query="
+        SELECT LAST_INSERT_ID();
+    ";
+    $result = $mysqli->query($query);
+    return $result->fetch_assoc()["LAST_INSERT_ID()"];
 }
 
 ?>

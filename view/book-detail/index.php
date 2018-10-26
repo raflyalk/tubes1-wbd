@@ -106,9 +106,10 @@
                 <div class="flex-container">
                     <?php echo $bookDetailView ?>
                 </div>
-                <form id="order-form" action="/controller/book-detail.php" method="POST">
+                <form id="order-form" action="">
                     <div>
-                        <input type='hidden' name='book-id' value='<?php echo $bookId;?>'/>
+                        <input type='hidden' name='user-id' id='user-id' value='<?php echo $user["user_id"];?>'/>
+                        <input type='hidden' name='book-id' id='book-id' value='<?php echo $bookId;?>'/>
                         <div id="order-holder">
                             <h2>Order</h2>
                             Jumlah: 
@@ -137,6 +138,20 @@
                 </div>
             </div>
         </div>
-        <script src="/view/review/script.js"></script>
+        </div>
+        <div id="order-modal" class="modal">
+            <div class="modal-content">
+                <div class="close">
+                    <div>&times;</div>
+                </div>
+                <div class="flex-container">
+                    <div class="check-img"><img src="/assets/images/checked.png" alt=""></div>
+                    <div class="modal-text">
+                        <div><b>Pemesanan berhasil!</b></div>
+                        <div id="nomor-transaksi">Nomor transaksi : 3</div>
+                    </div>
+                </div>
+            </div>
+        <script src="/view/book-detail/script.js"></script>
     </body>
 </html>
