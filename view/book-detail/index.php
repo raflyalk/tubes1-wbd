@@ -53,52 +53,56 @@
                         <div class ="image-holder">
                             <img src="/assets/images/mail.png" alt="">
                         </div>
-                        <div class ="rating-holder">
-                            <div id="rating-star-holder">
-                                <img class="rating-star" src="/assets/images/full-star-64.png">
-                                <img class="rating-star" src="/assets/images/full-star-64.png">
-                                <img class="rating-star" src="/assets/images/full-star-64.png">
-                                <img class="rating-star" src="/assets/images/full-star-64.png">
-                                <img class="rating-star" src="/assets/images/blank-star-64.png">
+                            <div class="rating-star-holder">
+                                <div><img class="rating-star" src="/assets/images/full-star-64.png"></div>
+                                <div><img class="rating-star" src="/assets/images/full-star-64.png"></div>
+                                <div><img class="rating-star" src="/assets/images/full-star-64.png"></div>
+                                <div><img class="rating-star" src="/assets/images/full-star-64.png"></div>
+                                <div><img class="rating-star" src="/assets/images/blank-star-64.png"></div>
                             </div>
-                            <div id="rating-number-holder">4.5/5.0</div>
-                        </div>
+                        <div class="rating-number-holder">4.5/5.0</div>
                     </div>
                 </div>
                 <form id="order-form" action="/controller/book-detail.php" method="POST">
-                    <input type='hidden' name='order_id' value='<?php echo $bookId;?>'/>
-                    <div id="order-holder">
-                        <h2>Order</h2>
-                        Jumlah: 
-                        <select name="total-order" id="total-order">
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
-                            <option value=4>4</option>
-                            <option value=5>5</option>
-                            <option value=6>6</option>
-                            <option value=7>7</option>
-                            <option value=8>8</option>
-                            <option value=9>9</option>
-                            <option value=10>10</option>
-                        </select>
-                        <div class="validation" id="rating-validation"><!-- --></div>
-                    <div id="form-button">
-                        <input type="submit" id="submit-order-button" value="Submit">
+                    <div>
+                        <input type='hidden' name='order_id' value='<?php echo $bookId;?>'/>
+                        <div id="order-holder">
+                            <h2>Order</h2>
+                            Jumlah: 
+                            <select name="total-order" id="total-order">
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                                <option value=6>6</option>
+                                <option value=7>7</option>
+                                <option value=8>8</option>
+                                <option value=9>9</option>
+                                <option value=10>10</option>
+                            </select>
+                        </div>
+                        <div id="form-button">
+                            <input type="submit" id="submit-order-button" value="Order">
+                        </div>
                     </div>
                 </form>
                 <div id="review-holder">
-                    <h2>Review</h2>
-                    <img src="/assets/images/edit.png">
-                    <div class="comment-holder">
-                        <h3>@tayotoya</h3>
-                        Buku ini keren bet!!
+                    <h2>Reviews</h2>
+                    <div class="flex-container">
+                        <div class="image-holder avatar">
+                            <img src="/assets/images/edit.png">
+                        </div>
+                        <div class="center-holder">
+                            <h3>@tayotoya</h3>
+                            Buku ini keren bet!! wowowowowowowo mantap djiwa bismillah css jadi yeeeeeeeyyyyy
+                        </div>
+                        <div class="right-object-holder">
+                            <div class="rating-star-holder review-rating-star"><img src="/assets/images/full-star-64.png"></div>
+                            <div class="rating-number-holder">4.0 / 5.0</div>
+                        </div>
                     </div>
-                    <div class="rating-holder">
-                        <img src="/assets/images/full-star-64.png">
-                        4.0/5.0
-                    </div>
-                    <h3></h3>
+                </div>
                 </div>
             </div>
         </div>

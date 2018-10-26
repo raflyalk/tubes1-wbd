@@ -1,15 +1,14 @@
-.content {
-    margin-left: 10px;
-    margin-right: 10px;
+body {
+    font-size: 14px;
 }
 
 .content .flex-container {
     display: flex;
     justify-content: stretch;
-    margin-top: 20px;
 }
 
 .content h2 {
+    font-size:24px;
     color: #01384E;
     margin: 20px 0px 10px 0px;
     /* margin-top: 10px; */
@@ -18,12 +17,15 @@
 .content h3 {
     color: #4E4E4E;
     margin: 0px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .content .detail-holder {
     width: 100%;
-    margin: 0px;
+}
+
+.book-description {
+    margin-top: 20px;
 }
 
 .right-object-holder {
@@ -37,15 +39,32 @@
     height: 100px;
     border: 1px solid #000000;
     margin: auto;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
-#rating-star-holder {
+.avatar img {
+    width: 70px;
+    height: 70px;
+    float: left;
+}
+
+.center-holder {
+    margin: 10px;
+    width: 100%;
+}
+
+.rating-star-holder {
     display: inline-block;
     position: relative;
-    height: max-content;
-    width: 120px;
-    padding: auto;
+    height: auto;
+    width: max-content;
+    text-align: center;
+    margin: auto;
+}
+
+.rating-star-holder div {
+    display: inline-block;
 }
 
 .rating-star {
@@ -54,54 +73,70 @@
     width: 24px;
 }
 
-.validation {
-    font-size: 10px;
-    color: #FF0000;
-    margin-top: 3px;
-    margin-left: 3px;
+.rating-star-holder > img {
+    height: 36px;
+    width: 36px;
+    margin: auto;
 }
 
-#comment-holder {
-    margin-bottom: 20px;
+
+.rating-number-holder {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-#comment {
-    resize: none;
+#order-holder {
     width: 100%;
 }
 
-#back {
-    float: left;
-    background-color: #FFFFFF;
-    color: #DF3F4A;
-    font-size: 16px;
-    border: 1px solid #DF3F4A;
-    border-radius: 8px;
-    width: 100px;
-    cursor: pointer;
+#total-order {
+    border: 1px solid #000000;
+    border-radius: 3px;
+    background: #FFFFFF;
+    text-overflow: clip;
 }
 
-#back:hover {
-    background-color: #DF3F4A;
-    color:#FFFFFF;
+#form-button {
+    display: inline-block;
+    position: relative;
+    height: auto;
+    width: 100%;
 }
 
-#submit {
+#submit-order-button {
+    float: right;
+}
+
+#form-button input {
     float: right;
     background-color: #188BCD;
     color: #FFFFFF;
     font-size: 16px;
     border: 1px solid #188BCD;
-    border-radius: 8px;
-    width: 100px;
+    border-radius: 3px;
+    width: 75px;
     cursor: pointer;
 }
 
-#submit:hover {
+#form-button input:hover {
     background-color: #157db8;
     border: 1px solid #157db8;
 }
 
-#rating-star-holder {
-    text-align: center;
+#review-holder {
+    display: block;
+}
+
+.right-object-holder {
+    margin: auto;
+
+}
+.review-rating-star {
+    width:100%;
 }
