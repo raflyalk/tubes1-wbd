@@ -48,6 +48,7 @@
                             </td>
                             <td>
                                 <input type="text" id="name" name="name" value="<?php echo $user["fullname"] ?>">
+                                <div class="validation name" style="display: none">Nama tidak boleh kosong</div>
                             </td>
                         </tr>
                         <tr>
@@ -56,6 +57,7 @@
                             </td>
                             <td>
                                 <textarea id="address" name="address"><?php echo $user["addrs"] ?></textarea>
+                                <div class="validation address">Alamat tidak boleh kosong</div>
                             </td>
                         </tr>
                         <tr>
@@ -64,6 +66,7 @@
                             </td>
                             <td>
                                 <input type="tel" id="phone-number" name="phoneNumber" value="<?php echo $user["phone_num"] ?>">
+                                <div class="validation phone-number">Nomor Telefon tidak boleh kosong</div>
                             </td>
                         </tr>
 
@@ -75,5 +78,7 @@
                 </form>
             </div>
         </div>
+
+        <script src="/view/edit-profile/script.js"></script>
     </body>
 </html>
