@@ -104,3 +104,9 @@ reviewForm.onsubmit = () => {
         return true;
     }
 }
+
+var backButton = document.getElementById('back');
+
+backButton.onclick = () => {
+    window.location.href = "/view/history";
+}
