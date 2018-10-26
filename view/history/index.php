@@ -28,7 +28,7 @@
                             <div class="left-order-details">' . ((isset($row["rating"])) ? "Anda sudah memberikan review" : 'Belum direview') . '</div>
                         </div>
                         <div class="right-text-holder">
-                            <div class="right-order-details">' . $row["order_date"] . '</div>
+                            <div class="right-order-details">' . date_format(date_create($row["order_date"]), "j F Y") . '</div>
                             <div class="right-order-details">Nomor Order : #' . $row["order_id"] . '</div>
                             ' . ((!isset($row["rating"]))? '<div class="review-button"><a href="/view/review?order-id=' . $row["order_id"] . '">Review</a></div>' : "") . '
                         </div>
