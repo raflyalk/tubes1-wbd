@@ -20,7 +20,7 @@
     <head>
         <title>Profile</title>
         <link rel = "stylesheet" href="/assets/global/global.css">
-        <link rel = "stylesheet" href="/view/profile/profile.css">
+        <link rel = "stylesheet" href="/view/profile/style.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     </head>
 
