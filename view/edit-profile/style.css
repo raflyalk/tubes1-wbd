@@ -81,7 +81,6 @@ td:last-child {
 .validation {
     color: red;
     font-size: 10px;
-    display: none;
 }
 
 .hidden {

@@ -30,10 +30,10 @@ var checkSubmitOk = function () {
 
 var validateInput = (field, validation) => {
     if (field.value === '') {
-        validation.style.display = 'block';
+        validation.classList.remove('hidden');
         submitButton.disabled = true;
     } else {
-        validation.style.display = 'none';
+        validation.classList.add('hidden');
         if (checkSubmitOk()) {
             submitButton.disabled = false;
         }

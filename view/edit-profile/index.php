@@ -9,7 +9,15 @@
 
     $activeTab = "profile";
 
+    $profilePictureErrorMessage = '';
     // Get user from database
+    if (isset($_GET["picture-error"])) {
+        if ($_GET["picture-error"] === 'size') {
+            $profilePictureErrorMessage = 'Picture size should be less than 1MB';
+        } else if ($_GET["picture-error"] === 'type') {
+            $profilePictureErrorMessage = 'Picture should be an image type';
+        }
+    }
 
     $user = getUser($_COOKIE["userId"]);
     $username = $user["username"];
@@ -38,6 +46,7 @@
                                 </div>
                             </td>
                             <td>
+                                <div class="validation profile-picture"><?php echo  $profilePictureErrorMessage ?></div>
                                 <label for="profile-picture">Update profile picture</label>
                                 <input type="file" id="profile-picture" name="profilePicture" accept="image/*">
                             </td>
@@ -48,7 +57,7 @@
                             </td>
                             <td>
                                 <input type="text" id="name" name="name" value="<?php echo $user["fullname"] ?>">
-                                <div class="validation name" style="display: none">Name cannot be empty</div>
+                                <div class="validation name hidden">Name cannot be empty</div>
                             </td>
                         </tr>
                         <tr>
@@ -57,7 +66,7 @@
                             </td>
                             <td>
                                 <textarea id="address" name="address"><?php echo $user["addrs"] ?></textarea>
-                                <div class="validation address">Address cannot be empty</div>
+                                <div class="validation address hidden">Address cannot be empty</div>
                             </td>
                         </tr>
                         <tr>
@@ -66,7 +75,7 @@
                             </td>
                             <td>
                                 <input type="tel" id="phone-number" name="phoneNumber" value="<?php echo $user["phone_num"] ?>">
-                                <div class="validation phone-number">Phone Number cannot be empty</div>
+                                <div class="validation phone-number hidden">Phone Number cannot be empty</div>
                             </td>
                         </tr>
 

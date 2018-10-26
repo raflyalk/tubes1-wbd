@@ -17,18 +17,24 @@ function uploadPicture() {
             $uploadOk = 1;
         } else {
             echo "File is not an image.";
+            header("Location: /view/edit-profile?picture-error=type");
+            exit();
             $uploadOk = 0;
         }
     }
     // Check file size
-    if ($_FILES["profilePicture"]["size"] > 500000) {
+    if ($_FILES["profilePicture"]["size"] > 1000000) {
         echo "Sorry, your file is too large.";
+        header("Location: /view/edit-profile?picture-error=size");
+        exit();
         $uploadOk = 0;
     }
     // Allow certain file formats
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
         echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        header("Location: /view/edit-profile?picture-error=type");
+        exit();
         $uploadOk = 0;
     }
     // Check if $uploadOk is set to 0 by an error
