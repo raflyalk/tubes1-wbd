@@ -7,8 +7,7 @@
         exit();
     }
 
-    session_start();
-    $_SESSION["activeTab"] = "history";
+    $activeTab = "history";
 
     // Get user from database
 
@@ -35,7 +34,7 @@
     <head>
         <title>Review</title>
         <link rel="stylesheet" href="/assets/global/global.css">
-        <link rel="stylesheet" href="/view/review/review.css">
+        <link rel="stylesheet" href="/view/review/style.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     </head>
 

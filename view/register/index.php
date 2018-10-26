@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
-    <link type="text/css" rel="stylesheet" href="/view/register/register.css">
+    <link type="text/css" rel="stylesheet" href="/view/register/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pathway+Gothic+One" rel="stylesheet">
 </head>
 <body>

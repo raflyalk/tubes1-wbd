@@ -7,8 +7,7 @@
         exit();
     }
 
-    session_start();
-    $_SESSION["activeTab"] = "browse";
+    $activeTab = "browse";
 
     // Get user from database
 
@@ -95,7 +94,7 @@
     <head>
         <title><?php echo $bookDetail["title"]?></title>
         <link rel="stylesheet" href="/assets/global/global.css">
-        <link rel="stylesheet" href="/view/book-detail/book-detail.css">
+        <link rel="stylesheet" href="/view/book-detail/style.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     </head>
 
