@@ -82,7 +82,7 @@
                         <div class="validation" id="comment-validation"><!-- --></div>
                     </div>
                     <div id="form-button">
-                        <input type="submit" name="action" id="back" value="Back">
+                        <input type="button" name="action" id="back" value="Back">
                         <input type="submit" name="action" id="submit" value="Submit">
                     </div>
                 </form>
