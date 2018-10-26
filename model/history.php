@@ -16,7 +16,7 @@ function getHistory($userId) {
         orders LEFT OUTER JOIN review ON orders.order_id = review.order_id
         INNER JOIN book ON orders.book_id = book.book_id
       WHERE user_id=" . $userId . "
-      ORDER BY order_date DESC;
+      ORDER BY orders.order_id DESC;
     ";
 
     $result = $mysqli->query($query);
