@@ -22,30 +22,38 @@
         <h1>LOGIN</h1>
         <?php echo $errorMessage; ?>
         <form class="login-form" action="/controller/login.php" method="post">
-            <div class="input-field-container">
-                <div class="form-input">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" size="20">
-                </div>
-                <div class="validation" id="username-validation">
-
-                </div>
-                <div class="form-input">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" size="20">
-                </div>
-                <div class="validation" id="password-validation">
-
-                </div>
-            </div>
+            <table>
+                <tr>
+                    <td>
+                        <label for="username">Username</label>
+                    </td>
+                    <td>
+                        <input type="text" id="username" name="username">
+                        <div class="validation hidden" id="username-validation">
+                            Username cannot be empty!
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password</label>
+                    </td>
+                    <td>
+                        <input type="password" id="password" name="password">
+                        <div class="validation hidden" id="password-validation">
+                            Password cannot be empty!
+                        </div>
+                    </td>
+                </tr>
+            </table>
             <div id="register-button">
                 <a href="/view/register">Don't have an account?</a>
             </div>
             <div class="login-button">
-                <input id="login-button" type="submit" value="LOGIN">
+                <input id="login-button" type="submit" value="LOGIN" disabled>
             </div>
         </form>
     </div>
-    <script src="/view/login/login-validation.js"></script>
+    <script src="/view/login/script.js"></script>
 </body>
 </html>
