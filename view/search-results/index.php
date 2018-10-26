@@ -41,8 +41,7 @@
     <head>
         <title>Search Results</title>
         <link rel = "stylesheet" href="/assets/global/global.css">
-        <link rel = "stylesheet" href="/assets/search/searchResult.css">
-        <link rel = "stylesheet" href="/assets/search/searchBook.css">
+        <link rel = "stylesheet" href="/view/search-results/style.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     </head>
     <body>
@@ -52,7 +51,7 @@
                 <h1 class="head-txt">Search Result</h1>
                 <ul>
                     <?php
-                        echo $resultView;
+                        echo (strlen($resultView)) ? $resultView : ("Books with title '" . $_GET["search-txt"] . "' is not found");
                     ?>
                 </ul>
             </div>
