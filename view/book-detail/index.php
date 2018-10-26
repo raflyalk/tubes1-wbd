@@ -46,7 +46,7 @@
         </div>
         <div class="rating-number-holder">' . $bookAvgRating . ' / 5.0</div>';
     } else {
-        $bookRatingView = '<div class="rating-number-holder">Book has no review yet</div>';
+        $bookRatingView = '<div class="rating-number-holder">No review</div>';
     }
 
     $bookDetailView = '
@@ -60,7 +60,35 @@
             <img src="' . $bookDetail["image_link"] . '">
         </div>
         ' . $bookRatingView . '
-    </div>'
+    </div>';
+
+    $bookReview = getBookReview($bookId);
+
+    $bookReviewView = '';
+
+    if ($bookReview  == null) {
+        $bookReviewView = '
+        <div class="center-holder">This book has no review yet</div>
+        ';
+    } else {
+        while ($row = $bookReview->fetch_assoc()) {
+            $userRating = number_format(round((float) $row["rating"], 1, PHP_ROUND_HALF_UP), 1);
+            $bookReviewView =  $bookReviewView . '
+            <div class="flex-container">
+                <div class="image-holder avatar">
+                    <img src="' . $row["prof_pic"] . '">
+                </div>
+                <div class="center-holder">
+                    <h3>@' . $row["username"] . '</h3>
+                    ' . $row["content"] . '
+                </div>
+                <div class="right-object-holder">
+                    <div class="rating-star-holder review-rating-star"><img src="/assets/images/full-star-64.png"></div>
+                    <div class="rating-number-holder">' . $userRating . ' / 5.0</div>
+                </div>
+            </div>';    
+        }
+    }
 ?>
 
 <html>
@@ -104,7 +132,8 @@
                 </form>
                 <div id="review-holder">
                     <h2>Reviews</h2>
-                    <div class="flex-container">
+                    <?php echo $bookReviewView ?>
+                    <!-- <div class="flex-container">
                         <div class="image-holder avatar">
                             <img src="/assets/images/edit.png">
                         </div>
@@ -116,7 +145,7 @@
                             <div class="rating-star-holder review-rating-star"><img src="/assets/images/full-star-64.png"></div>
                             <div class="rating-number-holder">4.0 / 5.0</div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 </div>
             </div>

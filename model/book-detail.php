@@ -32,6 +32,9 @@ function getBookReview($bookId) {
     
     $result = $mysqli->query($query);
 
+    if ($result->num_row <= 0) {
+        return null;
+    }
     return $result;
 }
 
