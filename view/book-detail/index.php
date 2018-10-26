@@ -1,6 +1,6 @@
 <?php
     include ($_SERVER["DOCUMENT_ROOT"] . "/model/login.php");
-    include ($_SERVER["DOCUMENT_ROOT"] . "/model/review.php");
+    include ($_SERVER["DOCUMENT_ROOT"] . "/model/book-detail.php");
     
     if (!isset($_COOKIE["userId"])) {
         header("Location: /view/login?auth=false");
@@ -19,21 +19,53 @@
     
     $bookId = $_GET["book-id"];
 
-    // $bookDetail = getBookDetail($bookId);
+    $bookDetail = getBookDetail($bookId);
 
-    // $bookDetailView = '
-    // <div class="detail-holder">
-    //     <div class="book-title"><h1>' . $bookDetail["title"] . '</h1></div>
-    //     <div class="book-detail"> </div><h3>' . $bookDetail["author"] . '</h3>
-    // </div>
-    // <div class ="image-holder">
-    //     <img src="' . $bookDetail["image_link"] . '" alt="">
-    // </div>'
+    $bookAvgRating = number_format(round((float) $bookDetail["rating"], 1, PHP_ROUND_HALF_UP), 1);
+
+    $bookStarRating = (int) $bookAvgRating;
+
+    function generateStarRating($nStar) {
+        $retVal = '';
+        for ($i = 1; $i <= 5; $i++) {
+            if ($i <= $nStar) {
+                $retVal = $retVal . '<div><img class="rating-star" src="/assets/images/full-star-64.png"></div> ';
+            } else {
+                $retVal = $retVal . '<div><img class="rating-star" src="/assets/images/blank-star-64.png"></div> ';
+            }
+        }
+        return $retVal;
+    }
+
+    $bookRatingView = '';
+
+    if ($bookDetail["rating"]) {
+        $bookRatingView = '
+        <div class="rating-star-holder">
+            ' . generateStarRating($bookStarRating) . '
+        </div>
+        <div class="rating-number-holder">' . $bookAvgRating . ' / 5.0</div>';
+    } else {
+        $bookRatingView = '<div class="rating-number-holder">Book has no review yet</div>';
+    }
+
+    $bookDetailView = '
+    <div class="detail-holder">
+        <div class="book-title"><h1>' . $bookDetail["title"] . '</h1></div>
+        <div class="book-author"><h3>' . $bookDetail["author"] . '</h3></div>
+        <div class="book-description">' . $bookDetail["description"] . '</div>
+    </div>
+    <div class="right-object-holder">
+        <div class ="image-holder">
+            <img src="' . $bookDetail["image_link"] . '">
+        </div>
+        ' . $bookRatingView . '
+    </div>'
 ?>
 
 <html>
     <head>
-        <title>Book Detail #<?php echo $bookId?></title>
+        <title><?php echo $bookDetail["title"]?></title>
         <link rel="stylesheet" href="/assets/global/global.css">
         <link rel="stylesheet" href="/view/book-detail/book-detail.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -41,27 +73,10 @@
 
     <body>
         <div class="container">
-            <?php include ($_SERVER[DOCUMENT_ROOT] . "/assets/header/header.php"); ?>
+            <?php include ($_SERVER["DOCUMENT_ROOT"] . "/assets/header/header.php"); ?>
             <div class="content">
                 <div class="flex-container">
-                    <div class="detail-holder">
-                        <div class="book-title"><h1>Nota Hidup</h1></div>
-                        <div class="book-author"><h3>Light D. R. B.</h3></div>
-                        <div class="book-description">Buku ajaib ini berisi nama-nama orang terpilih. Jika namamu tertulis di buku ini maka kamu adalah salah satu orang yang beruntung.</div>
-                    </div>
-                    <div class="right-object-holder">
-                        <div class ="image-holder">
-                            <img src="/assets/images/mail.png" alt="">
-                        </div>
-                            <div class="rating-star-holder">
-                                <div><img class="rating-star" src="/assets/images/full-star-64.png"></div>
-                                <div><img class="rating-star" src="/assets/images/full-star-64.png"></div>
-                                <div><img class="rating-star" src="/assets/images/full-star-64.png"></div>
-                                <div><img class="rating-star" src="/assets/images/full-star-64.png"></div>
-                                <div><img class="rating-star" src="/assets/images/blank-star-64.png"></div>
-                            </div>
-                        <div class="rating-number-holder">4.5/5.0</div>
-                    </div>
+                    <?php echo $bookDetailView ?>
                 </div>
                 <form id="order-form" action="/controller/book-detail.php" method="POST">
                     <div>
