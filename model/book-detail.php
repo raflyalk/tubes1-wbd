@@ -27,7 +27,7 @@ function getBookReview($bookId) {
     $query="
         SELECT review.rating, review.content, user.username, user.prof_pic
         FROM review INNER JOIN orders USING (order_id) INNER JOIN user ON (user.user_id = orders.user_id)
-        WHERE book_id = " . $bookId . ";
+        WHERE book_id = " . $bookId . " ORDER BY order_date DESC;
     ";
     
     $result = $mysqli->query($query);
@@ -35,6 +35,19 @@ function getBookReview($bookId) {
     if ($result->num_row <= 0) {
         return null;
     }
+    return $result;
+}
+
+function createOrder($userId, $bookId, $numBook) {
+    global $mysqli;
+
+    $query="
+    INSERT INTO orders (user_id, book_id, num_book, order_date)
+    VALUES (" . $userId . ", " . $bookId . ", " . $numBook . ", '" . date("Y-m-d") . "');
+    SELECT LAST_INSERT_ID();
+    ";
+
+    $result = $mysqli->query($query);
     return $result;
 }
 

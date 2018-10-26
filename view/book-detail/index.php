@@ -108,7 +108,7 @@
                 </div>
                 <form id="order-form" action="/controller/book-detail.php" method="POST">
                     <div>
-                        <input type='hidden' name='order_id' value='<?php echo $bookId;?>'/>
+                        <input type='hidden' name='book-id' value='<?php echo $bookId;?>'/>
                         <div id="order-holder">
                             <h2>Order</h2>
                             Jumlah: 
@@ -133,19 +133,6 @@
                 <div id="review-holder">
                     <h2>Reviews</h2>
                     <?php echo $bookReviewView ?>
-                    <!-- <div class="flex-container">
-                        <div class="image-holder avatar">
-                            <img src="/assets/images/edit.png">
-                        </div>
-                        <div class="center-holder">
-                            <h3>@tayotoya</h3>
-                            Buku ini keren bet!! wowowowowowowo mantap djiwa bismillah css jadi yeeeeeeeyyyyy
-                        </div>
-                        <div class="right-object-holder">
-                            <div class="rating-star-holder review-rating-star"><img src="/assets/images/full-star-64.png"></div>
-                            <div class="rating-number-holder">4.0 / 5.0</div>
-                        </div>
-                    </div> -->
                 </div>
                 </div>
             </div>
